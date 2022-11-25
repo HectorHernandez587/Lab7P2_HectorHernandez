@@ -1,13 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Hector
- */
+import javax.swing.*;
+
 public class LogIn extends javax.swing.JFrame {
 
     /**
@@ -26,17 +19,110 @@ public class LogIn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jp_fondo = new javax.swing.JPanel();
+        jl_titulo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jl_cityfondo = new javax.swing.JLabel();
+        icono_logo = new javax.swing.JLabel();
+        titulo_iniciar_sesion = new javax.swing.JLabel();
+        subtitulo_usuario = new javax.swing.JLabel();
+        jt_username = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        subtitulo_password = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jp_fondo.setBackground(new java.awt.Color(255, 255, 255));
+        jp_fondo.setForeground(new java.awt.Color(204, 204, 204));
+        jp_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jl_titulo.setFont(new java.awt.Font("Roboto Medium", 1, 20)); // NOI18N
+        jl_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl_titulo.setText("Lab7_P2_HectorHernandez");
+        jp_fondo.add(jl_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 300, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/logo.png"))); // NOI18N
+        jp_fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 150, 140));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Log 1.png"))); // NOI18N
+        jp_fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 130, 140));
+
+        jl_cityfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/city.png"))); // NOI18N
+        jl_cityfondo.setMaximumSize(new java.awt.Dimension(350, 500));
+        jl_cityfondo.setMinimumSize(new java.awt.Dimension(350, 500));
+        jp_fondo.add(jl_cityfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, 500));
+
+        icono_logo.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
+        icono_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favicon.png"))); // NOI18N
+        icono_logo.setText("LOGO");
+        jp_fondo.add(icono_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+
+        titulo_iniciar_sesion.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
+        titulo_iniciar_sesion.setText("INICIAR SESIÓN");
+        jp_fondo.add(titulo_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        subtitulo_usuario.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        subtitulo_usuario.setText("Usuario");
+        jp_fondo.add(subtitulo_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
+
+        jt_username.setFont(new java.awt.Font("Roboto Thin", 1, 14)); // NOI18N
+        jt_username.setForeground(new java.awt.Color(153, 153, 153));
+        jt_username.setText("Ingrese su nombre de usuario");
+        jt_username.setBorder(null);
+        jt_username.setDisabledTextColor(new java.awt.Color(204, 204, 204));
+        jp_fondo.add(jt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 370, 40));
+
+        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
+        jp_fondo.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 262, 380, 10));
+
+        subtitulo_password.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
+        subtitulo_password.setText("Contraseña");
+        jp_fondo.add(subtitulo_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
+
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
+        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setBorder(null);
+        jp_fondo.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 380, 30));
+
+        jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
+        jp_fondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 380, 10));
+
+        jPanel1.setBackground(new java.awt.Color(0, 134, 255));
+        jPanel1.setToolTipText("");
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Entrar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jp_fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 766, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addComponent(jp_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -78,5 +164,20 @@ public class LogIn extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel icono_logo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel jl_cityfondo;
+    private javax.swing.JLabel jl_titulo;
+    private javax.swing.JPanel jp_fondo;
+    private javax.swing.JTextField jt_username;
+    private javax.swing.JLabel subtitulo_password;
+    private javax.swing.JLabel subtitulo_usuario;
+    private javax.swing.JLabel titulo_iniciar_sesion;
     // End of variables declaration//GEN-END:variables
 }
