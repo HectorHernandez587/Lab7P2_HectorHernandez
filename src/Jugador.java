@@ -56,7 +56,11 @@ public class Jugador {
     }
 
     public void setDorsal(int dorsal) {
-        this.dorsal = dorsal;
+        if (dorsal >= 1 && dorsal <= 26) {
+            if (dorsal != 1 && dorsal != 13 && dorsal != 26 && this.posicion != "Portero") {
+                this.dorsal = dorsal;
+            }
+        }
     }
 
     public int getGoles() {
