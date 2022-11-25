@@ -78,8 +78,16 @@ public class administrarSeleccion {
             try {
                 lea = new Scanner(archivo);
                 lea.useDelimiter("|");
+                lea.useDelimiter(";");
                 while (lea.hasNext()) {
+
                     listaSelecciones.add(new Seleccion(lea.next(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt()));
+                    if (!lea.hasNext("") && !lea.hasNext("")) {
+                        while (!lea.hasNext("")) {
+                            int pos = listaSelecciones.size() - 1;
+                            listaSelecciones.get(pos).getJugadores().add(new Jugador(lea.next()));
+                        }
+                    }
                 }
             } catch (Exception e) {
             }

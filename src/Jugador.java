@@ -17,6 +17,12 @@ public class Jugador {
     public Jugador() {
     }
 
+    public Jugador(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+
     public Jugador(String nombre, int dorsal, int goles, int asistencia, int partidos_jugados, int tarjetas_amarillas, int tarjetas_rojas, int faltas_cometidas, int faltas_recibidas, String posicion, String seleccion) {
         this.nombre = nombre;
         this.dorsal = dorsal;
@@ -42,8 +48,8 @@ public class Jugador {
         this.faltas_cometidas = faltas_cometidas;
         this.faltas_recibidas = faltas_recibidas;
         this.posicion = posicion;
-        this.seleccion = seleccion;
         this.porterias_imbatidas = porterias_imbatidas;
+        this.seleccion = seleccion;
     }
 
     public String getNombre() {
