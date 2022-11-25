@@ -15,14 +15,9 @@ public class Grupos {
     public void setLista(Seleccion[] lista) {
         this.lista = lista;
     }
-    
-    public int PuntosObtenidos(Seleccion s) {
-        int puntos_obtenidos = s.getPartidos_ganados() * 3 + s.getPartidos_empatados();
-        return puntos_obtenidos;
-    }
 
     public void OrdenarLista() {
-
+        //Collections.sort(lista, (lista[0], lista[1]) -> ((Seleccion)PuntosObtenidos(lista[0])).compareTo((Seleccion)PuntosObtenidos(lista[1])));
     }
     
 }

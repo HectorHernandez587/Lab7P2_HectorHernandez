@@ -106,6 +106,11 @@ public class Seleccion {
         return "Seleccion{" + "nombre=" + nombre + ", partidos_jugados=" + partidos_jugados + ", partidos_ganados=" + partidos_ganados + ", partidos_empatados=" + partidos_empatados + ", partidos_perdidos=" + partidos_perdidos + ", goles_favor=" + goles_favor + ", goles_contra=" + goles_contra + ", diferencia_goles=" + diferencia_goles + ", jugadores=" + jugadores + '}';
     }
     
+    public int PuntosObtenidos(Seleccion s) {
+        int puntos_obtenidos = s.getPartidos_ganados() * 3 + s.getPartidos_empatados();
+        return puntos_obtenidos;
+    }
+    
     
     
     

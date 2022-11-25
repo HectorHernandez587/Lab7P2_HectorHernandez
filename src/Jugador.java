@@ -12,11 +12,12 @@ public class Jugador {
     private int faltas_recibidas;
     private String posicion;
     private int porterias_imbatidas;
+    private String seleccion;
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, int dorsal, int goles, int asistencia, int partidos_jugados, int tarjetas_amarillas, int tarjetas_rojas, int faltas_cometidas, int faltas_recibidas, String posicion) {
+    public Jugador(String nombre, int dorsal, int goles, int asistencia, int partidos_jugados, int tarjetas_amarillas, int tarjetas_rojas, int faltas_cometidas, int faltas_recibidas, String posicion, String seleccion) {
         this.nombre = nombre;
         this.dorsal = dorsal;
         this.goles = goles;
@@ -27,9 +28,10 @@ public class Jugador {
         this.faltas_cometidas = faltas_cometidas;
         this.faltas_recibidas = faltas_recibidas;
         this.posicion = posicion;
+        this.seleccion = seleccion;
     }
 
-    public Jugador(String nombre, int dorsal, int goles, int asistencia, int partidos_jugados, int tarjetas_amarillas, int tarjetas_rojas, int faltas_cometidas, int faltas_recibidas, String posicion, int porterias_imbatidas) {
+    public Jugador(String nombre, int dorsal, int goles, int asistencia, int partidos_jugados, int tarjetas_amarillas, int tarjetas_rojas, int faltas_cometidas, int faltas_recibidas, String posicion, String seleccion, int porterias_imbatidas) {
         this.nombre = nombre;
         this.dorsal = dorsal;
         this.goles = goles;
@@ -40,6 +42,7 @@ public class Jugador {
         this.faltas_cometidas = faltas_cometidas;
         this.faltas_recibidas = faltas_recibidas;
         this.posicion = posicion;
+        this.seleccion = seleccion;
         this.porterias_imbatidas = porterias_imbatidas;
     }
 
@@ -127,6 +130,14 @@ public class Jugador {
         this.posicion = posicion;
     }
 
+    public String getSeleccion() {
+        return seleccion;
+    }
+
+    public void setSeleccion(String seleccion) {
+        this.seleccion = seleccion;
+    }
+
     public int getPorterias_imbatidas() {
         return porterias_imbatidas;
     }
@@ -137,7 +148,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", dorsal=" + dorsal + ", goles=" + goles + ", asistencia=" + asistencia + ", partidos_jugados=" + partidos_jugados + ", tarjetas_amarillas=" + tarjetas_amarillas + ", tarjetas_rojas=" + tarjetas_rojas + ", faltas_cometidas=" + faltas_cometidas + ", faltas_recibidas=" + faltas_recibidas + ", posicion=" + posicion + ", porterias_imbatidas=" + porterias_imbatidas + '}';
+        return "Jugador{" + "nombre=" + nombre + ", dorsal=" + dorsal + ", goles=" + goles + ", asistencia=" + asistencia + ", partidos_jugados=" + partidos_jugados + ", tarjetas_amarillas=" + tarjetas_amarillas + ", tarjetas_rojas=" + tarjetas_rojas + ", faltas_cometidas=" + faltas_cometidas + ", faltas_recibidas=" + faltas_recibidas + ", posicion=" + posicion + ", porterias_imbatidas=" + porterias_imbatidas + ", seleccion=" + seleccion + '}';
     }
 
 }
