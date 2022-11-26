@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -125,8 +126,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 16)); // NOI18N
         jLabel2.setText("Escoge una Selección:");
 
-        cb_seleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         jLabel3.setFont(new java.awt.Font("Roboto Black", 1, 16)); // NOI18N
         jLabel3.setText("Nombre Jugador:");
 
@@ -157,9 +156,9 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jtf_nombre_jugador)
-                            .addComponent(cb_seleccion, 0, 172, Short.MAX_VALUE)
+                            .addComponent(cb_seleccion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(spinner_dorsal)
-                            .addComponent(cb_posicion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cb_posicion, 0, 172, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addComponent(bt_agregar_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -186,7 +185,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(cb_posicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addComponent(bt_agregar_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Ingresar Jugadores", jPanel4);
@@ -334,7 +333,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -353,10 +352,14 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_agregar_seleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_agregar_seleccionActionPerformed
         // TODO add your handling code here:
-        String nombre;
-        
-        
-        
+        String nombre = jtf_nombre_seleccion.getText();
+        try {
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_seleccion.getModel();
+            modelo.addElement(nombre);
+            cb_seleccion.setModel(modelo);
+            jtf_nombre_seleccion.setText("");
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_bt_agregar_seleccionActionPerformed
 
     /**
