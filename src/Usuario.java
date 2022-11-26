@@ -8,6 +8,13 @@ public class Usuario {
     public Usuario() {
     }
 
+    public Usuario(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+    
+
     public Usuario(int id, String username, String password, String tipo_usuario) {
         this.id = id;
         this.username = username;

@@ -24,7 +24,7 @@ public class administrarPartido {
     }
 
     //extra mutador
-    public void setPartido (Partido p) {
+    public void setPartido(Partido p) {
         this.listaPartidos.add(p);
     }
 
@@ -40,8 +40,6 @@ public class administrarPartido {
     public String toString() {
         return "administrarPartido{" + "listaPartidos=" + listaPartidos + ", archivo=" + archivo + '}';
     }
-
-    
 
     public void escribirArchivo() throws IOException {
         FileWriter fw = null;
@@ -59,7 +57,7 @@ public class administrarPartido {
                 bw.write(p.getTiros_total() + "|");
                 bw.write(p.getTiros_meta() + "|");
                 bw.write(p.getFaltas_cometidas() + "|");
-                
+
                 for (Jugador jc : p.getJug_comfaltas()) {
                     bw.write(jc.getNombre() + ";");
                 }
@@ -86,7 +84,21 @@ public class administrarPartido {
                 lea.useDelimiter("|");
 
                 while (lea.hasNext()) {
-                    //listaPartidos.add(new Partido(, visita, 0, 0, 0, 0, 0));
+                    listaPartidos.add(new Partido(lea.next(), lea.next(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt(), lea.nextInt()));
+                    if (!lea.hasNext("") && !lea.hasNext("")) {
+                        while (!lea.hasNext("")) {
+                            int pos = listaPartidos.size() - 1;
+                            listaPartidos.get(pos).getJug_comfaltas().add(new Jugador(lea.next()));
+                        }
+                        while (!lea.hasNext("")) {
+                            int pos = listaPartidos.size() - 1;
+                            listaPartidos.get(pos).getJug_tarjetas().add(new Jugador(lea.next()));
+                        }
+                        while (!lea.hasNext("")) {
+                            int pos = listaPartidos.size() - 1;
+                            listaPartidos.get(pos).getJug_goleadores().add(new Jugador(lea.next()));
+                        }
+                    }
                 }
             } catch (Exception e) {
             }

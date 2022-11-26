@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Partido {
     
-    private Seleccion local;
-    private Seleccion visita;
+    private String local;
+    private String visita;
     private int goles;
     private int posesion;
     private int tiros_total;
@@ -15,7 +15,7 @@ public class Partido {
     private ArrayList <Jugador> jug_tarjetas = new ArrayList();
     private ArrayList <Jugador> jug_goleadores = new ArrayList();
 
-    public Partido(Seleccion local, Seleccion visita, int goles, int posesion, int tiros_total, int tiros_meta, int faltas_cometidas) {
+    public Partido(String local, String visita, int goles, int posesion, int tiros_total, int tiros_meta, int faltas_cometidas) {
         this.local = local;
         this.visita = visita;
         this.goles = goles;
@@ -28,19 +28,19 @@ public class Partido {
     public Partido() {
     }
 
-    public Seleccion getLocal() {
+    public String getLocal() {
         return local;
     }
 
-    public void setLocal(Seleccion local) {
+    public void setLocal(String local) {
         this.local = local;
     }
 
-    public Seleccion getVisita() {
+    public String getVisita() {
         return visita;
     }
 
-    public void setVisita(Seleccion visita) {
+    public void setVisita(String visita) {
         this.visita = visita;
     }
 

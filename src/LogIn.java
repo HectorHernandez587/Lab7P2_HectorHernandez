@@ -1,13 +1,22 @@
 
+import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.*;
 
 public class LogIn extends javax.swing.JFrame {
+    
+    Principal p = new Principal();
+    Espectadores e = new Espectadores();
+    
 
     /**
      * Creates new form LogIn
      */
     public LogIn() {
+        p.listaUsuarios.add(new Usuario(123, "admin", "admin", "Administrador"));
+        e.listaUsuarios.add(new Usuario(587, "Hector", "contra", "Espectador"));
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,7 +39,7 @@ public class LogIn extends javax.swing.JFrame {
         jt_username = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         subtitulo_password = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        pf_password = new javax.swing.JPasswordField();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         bt_entrar = new javax.swing.JLabel();
@@ -58,13 +67,12 @@ public class LogIn extends javax.swing.JFrame {
         jp_fondo.add(jl_cityfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, -1, 500));
 
         icono_logo.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
-        icono_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/favicon.png"))); // NOI18N
-        icono_logo.setText("LOGO");
-        jp_fondo.add(icono_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        icono_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo Unitec.png"))); // NOI18N
+        jp_fondo.add(icono_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 300, -1));
 
         titulo_iniciar_sesion.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         titulo_iniciar_sesion.setText("INICIAR SESIÓN");
-        jp_fondo.add(titulo_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+        jp_fondo.add(titulo_iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         subtitulo_usuario.setFont(new java.awt.Font("Roboto Medium", 1, 18)); // NOI18N
         subtitulo_usuario.setText("Usuario");
@@ -84,11 +92,11 @@ public class LogIn extends javax.swing.JFrame {
         subtitulo_password.setText("Contraseña");
         jp_fondo.add(subtitulo_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(153, 153, 153));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(null);
-        jp_fondo.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 380, 30));
+        pf_password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        pf_password.setForeground(new java.awt.Color(153, 153, 153));
+        pf_password.setText("jPasswordField1");
+        pf_password.setBorder(null);
+        jp_fondo.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 380, 30));
 
         jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
         jp_fondo.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 380, 10));
@@ -135,9 +143,32 @@ public class LogIn extends javax.swing.JFrame {
 
     private void bt_entrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_entrarMouseClicked
         // TODO add your handling code here:
-        
-        
-        
+        ArrayList<Usuario> lista = p.listaUsuarios;
+        ArrayList<Usuario> listaEspec = e.listaUsuarios;
+
+        Random r = new Random();
+        String usuario = jt_username.getText();
+        String password = pf_password.getText();
+
+        try {
+            if (((Usuario) lista.get(0)).getUsername().equalsIgnoreCase("admin") && ((Usuario) lista.get(0)).getPassword().equalsIgnoreCase(password)
+                    || ((Usuario) lista.get(1)).getUsername().equalsIgnoreCase("Hector") && ((Usuario) lista.get(1)).getPassword().equalsIgnoreCase(password)) {
+                p.setVisible(true);
+                e.setVisible(false);
+                setVisible(false);
+            } else if (((Usuario) lista.get(0)).getUsername().equalsIgnoreCase(usuario) && ((Usuario) lista.get(0)).getPassword().equalsIgnoreCase(password)
+                    || ((Usuario) lista.get(1)).getUsername().equalsIgnoreCase(usuario) && ((Usuario) lista.get(1)).getPassword().equalsIgnoreCase(password)) {
+                p.setVisible(true);
+                e.setVisible(false);
+                setVisible(false);
+            } else {
+                listaEspec.add(new Usuario(RandomId(), usuario, password));
+                e.setVisible(true);
+                setVisible(false);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
     }//GEN-LAST:event_bt_entrarMouseClicked
 
     /**
@@ -174,6 +205,27 @@ public class LogIn extends javax.swing.JFrame {
             }
         });
     }
+    
+    public int RandomId() {
+        Random r = new Random();
+        int id = r.nextInt(7500);
+        boolean centinela = false;
+        while (centinela == true) {
+            int asm = 0;
+            ArrayList<Usuario> lista = p.listaUsuarios;
+            for (int i = 0; i < lista.size(); i++) {                 
+                if (lista.get(i).getId() == id) {
+                    asm++;
+                }
+            }
+            if (asm > 0) {
+                id = r.nextInt();
+            } else {
+                centinela = true;
+            }
+        }
+        return id;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bt_entrar;
@@ -181,13 +233,13 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel jl_cityfondo;
     private javax.swing.JLabel jl_titulo;
     private javax.swing.JPanel jp_fondo;
     private javax.swing.JTextField jt_username;
+    private javax.swing.JPasswordField pf_password;
     private javax.swing.JLabel subtitulo_password;
     private javax.swing.JLabel subtitulo_usuario;
     private javax.swing.JLabel titulo_iniciar_sesion;

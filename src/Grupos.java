@@ -17,7 +17,7 @@ public class Grupos {
     }
 
     public void OrdenarLista() {
-        //Collections.sort(lista, (lista[0], lista[1]) -> ((Seleccion)PuntosObtenidos(lista[0])).compareTo((Seleccion)PuntosObtenidos(lista[1])));
+        
     }
     
 }
